@@ -28,6 +28,14 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
     Vercel - The deployment platform used
     
+## Design
+
+[Miro board](https://miro.com/app/board/uXjVPkoAI88=/)
+
+[Figma board](https://www.figma.com/file/wVdBFVqoaLtPQPA0bq4ZY3/Untitled?node-id=0%3A1&t=eSBWnVZF4j4wmwCg-0)
+
+[Figma clickable prototype](https://www.figma.com/proto/wVdBFVqoaLtPQPA0bq4ZY3/Untitled?node-id=51%3A448&scaling=scale-down&page-id=0%3A1&starting-point-node-id=51%3A448)
+
 ## Authors
 
 Gal Jones, Laura Keating, Niete Ratital, Dominic Simpson 
