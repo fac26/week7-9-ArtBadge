@@ -3,6 +3,22 @@ https://week7-9-artbadge.vercel.app/
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+We have created an app called Art Badge. The app allows users to upload their favoured paintings by famous artists.  
+
+## Deployment
+
+Please follow this link to our [deployed site] (https://week7-9-artbadge.vercel.app)
+
+Clone Repo
+
+Please ``clone`` this repo to your local machine
+
+Please run ``npm install`` to install all dependencies
+
+Please run ``npm start`` to run the app
+
+
 ## Getting Started
 
 First, run the development server:
@@ -25,14 +41,17 @@ The `pages/api` directory is mapped to `/api/*`. Files in this directory are tre
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-## Learn More
+Built With
 
-To learn more about Next.js, take a look at the following resources:
+    React - The web framework used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+    VsCode - The code editor used
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+    Netlify - The deployment platform used
+
+Authors
+
+Gal Jones, Laura Keating, Niete, Dominic Simpson 
 
 ## Deploy on Vercel
 
