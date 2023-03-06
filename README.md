@@ -1,6 +1,6 @@
 # ArtBadge
 
-We have created an app called Art Badge. The app allows users to upload reviews of pieces of art and share them with other users of the app. We are building ArtBadge as our final project for [Founders&Coders FAC26](https://github.com/fac26).
+We have created an app called Art Badge. The app allows users to upload reviews of pieces of art and share them with other users of the app. We are building ArtBadge as our final project for [Founders & Coders FAC26](https://github.com/fac26).
 
 Contributors [Laura Keating](https://github.com/LauraK0), [Niete Ratilal](https://github.com/Psydwinder), [Dominic Simpson](https://github.com/DominicSimpson), [Gal K Jones](https://github.com/GalKJ)
 
