@@ -1,0 +1,6 @@
+.cardContainer {
+  background-color: var(--card-background-colour);
+  height: 10rem;
+  width: 50%;
+  border-radius: .5rem;
+}
