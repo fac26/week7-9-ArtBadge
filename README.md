@@ -16,19 +16,21 @@ A web app that allows users to 'collect' and rate artworks they've seen in-perso
 
 Seeing artworks digitally rarely compares to the experience of seeing them in context and person. Your experiences of artworks may change depending on exhibition-context, location, or simply down to 'real-life expectations'.
 
+The aim is to get more people to see more artwork, and to encourage them to share their experiences of seeing art in-person. 
+
 </details>
 
 ## Project Scope
 
 <details>
 
-### What are you not building?
+#### What are you not building?
 
 We are not building a React Native app, an online database of art works, a general social network app and we're not building a site for galleries to advetise new exhibitions.
 
 #### How did you decide what features were important?
 
-We conducted user research and usability testing. Our users gave us valuable feedback which helped us refine our initial concept. In some instances that meant intergrating new feature which we hadn't considered before and in other instances removing features that we had initialy thought essential.
+We conducted user research and usability testing. Our users gave us valuable feedback which helped us refine our initial concept. In some instances that meant intergrating new features which we hadn't considered before and in other instances removing features that we had initialy thought essential.
 
 </details>
 
@@ -58,12 +60,12 @@ We conducted user research and usability testing. Our users gave us valuable fee
 
 Some valuable feedback included:
 
-- simplify routes meaning removing number of clicks needed to complete a user storey
+- simplify routes meaning removing the number of clicks needed to complete a user storey
 - adding more quick links to the navbar.
 - changing scrolling on feed to up/down rather than left/right
-- Make the rating process more interactive/fun
+- Making the rating process more interactive/fun
 
-In some instances that meant intergrating new feature which we hadn't considered before and in other instances removing features that we had initialy thought essential.
+In some instances that meant intergrating new features which we hadn't considered before and in other instances removing features that we had initialy thought essential.
 
 Some new features included:
 
