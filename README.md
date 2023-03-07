@@ -135,15 +135,11 @@ We will ensure our project is accessible to as many users as possible by:
 
 #### What roles did your team take on?
 
-```
-Explain the roles and responsibilities of all people working within the software development lifecycle, and how they relate to the project (K2)
-```
+`Explain the roles and responsibilities of all people working within the software development lifecycle, and how they relate to the project (K2)`
 
 #### Did these roles help your team work effectively?
 
-```
-Outline how teams work effectively to produce software and how to contribute appropriately (K6) Compare and contrast the requirements of a software development team, and how they would ensure that each member (including themselves) were able to make a contribution (K6)
-```
+`Outline how teams work effectively to produce software and how to contribute appropriately (K6) Compare and contrast the requirements of a software development team, and how they would ensure that each member (including themselves) were able to make a contribution (K6)`
 
 </details>
 
@@ -173,9 +169,7 @@ Outline how teams work effectively to produce software and how to contribute app
 
 #### Did you create a technical specification?
 
-```
-Review methods of software design with reference to functional/technical specifications and apply a justified approach to software development (K11, S11, S12)
-```
+`Review methods of software design with reference to functional/technical specifications and apply a justified approach to software development (K11, S11, S12)`
 
 </details>
 
@@ -185,21 +179,15 @@ Review methods of software design with reference to functional/technical specifi
 
 #### How did you ensure your code was good?
 
-```
-Create logical and maintainable code to deliver project outcomes, explaining their choice of approach. (S1)
-```
+`Create logical and maintainable code to deliver project outcomes, explaining their choice of approach. (S1)`
 
 #### What interesting technical problems did you have to solve?
 
-```
-Outline and apply the rationale and use of algorithms, logic and data structures. (K9, S16)
-```
+`Outline and apply the rationale and use of algorithms, logic and data structures. (K9, S16)`
 
 #### How did you debug issues that arose?
 
-```
-Apply structured techniques to problem solving to identify and resolve issues and debug basic flaws in code (S7)
-```
+`Apply structured techniques to problem solving to identify and resolve issues and debug basic flaws in code (S7)`
 
 </details>
 
@@ -209,15 +197,11 @@ Apply structured techniques to problem solving to identify and resolve issues an
 
 #### How did you verify your project worked correctly?
 
-```
-Identify and create test scenarios which satisfy the project specification (S6)
-```
+`Identify and create test scenarios which satisfy the project specification (S6)`
 
 #### Did writing automated tests catch any bugs?
 
-```
-Analyse unit testing results and review the outcomes, correcting errors. (S4)
-```
+`Analyse unit testing results and review the outcomes, correcting errors. (S4)`
 
 </details>
 
@@ -227,9 +211,7 @@ Analyse unit testing results and review the outcomes, correcting errors. (S4)
 
 #### Where/how did you deploy your application?
 
-```
-Review and justify their contribution to building, managing and deploying code into the relevant environment in accordance with the project specification (S10)
-```
+`Review and justify their contribution to building, managing and deploying code into the relevant environment in accordance with the project specification (S10)`
 
 #### What problems did you encounter during deployment?
 
@@ -243,11 +225,11 @@ Review and justify their contribution to building, managing and deploying code i
 
 #### Could a new person quickly be onboarded to contribute?
 
-```
+`
 Establishes a logical thinking approach to areas of work which require valid reasoning and/or justified decision making (B2)
 
 Describes how they have maintained a productive, professional and secure working environment throughout the project activity (B3)
-```
+`
 
 </details>
 
