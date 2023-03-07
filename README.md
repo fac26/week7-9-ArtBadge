@@ -18,7 +18,7 @@ Contributors [Laura Keating](https://github.com/LauraK0), [Niete Ratilal](https:
 
 <details>
 
-###¢ What are you not building?
+### What are you not building?
 
 We are not building a React Native app, an online database of art works, a general social network app and we're not building a site for galleries to advetise new exhibitions.  
 
