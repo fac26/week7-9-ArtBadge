@@ -3,29 +3,38 @@ context('Navigation', () => {
     cy.visit('http://localhost:3000');
   });
 
-  it('Contains all Nav elements', () => {
+  it('Contains all NavBar elements', () => {
     cy.get('nav').contains('/');
-    cy.get('nav').contains('Sign In');
-    cy.get('nav').contains('Sign Up');
+    cy.get('nav').contains('material-symbols:home');
+    cy.get('nav').contains('material-symbols:help-center');
+    cy.get('nav').contains('material-symbols:add');
+    cy.get('nav').contains('fa6-solid:ranking-star');
+    cy.get('nav').contains('fluent:book-contacts-20-filled');
   });
 
-  it("Home click takes to route '/'", () => {
-    cy.get('nav').contains('Home').click();
-    cy.location('pathname').should('include', '');
+  it("cy.go() - go back or forward in the browser's history", () => {
+    cy.location('pathname').should('include', 'navigation');
+
+    cy.go('back');
+    cy.location('pathname').should('not.include', 'navigation');
+
+    cy.go('forward');
+    cy.location('pathname').should('include', 'navigation');
+
+    // clicking back
+    cy.go(-1);
+    cy.location('pathname').should('not.include', 'navigation');
+
+    // clicking forward
+    cy.go(1);
+    cy.location('pathname').should('include', 'navigation');
   });
 
-  it("Login click takes to route '/sign-in'", () => {
-    cy.get('nav').contains('Sign In').click();
-    cy.location('pathname').should('include', 'sign-in');
-  });
+  it('cy.reload() - reload the page', () => {
+    // https://on.cypress.io/reload
+    cy.reload();
 
-  it("Sign Up click takes to route '/sign-up'", () => {
-    cy.get('nav').contains('Sign Up').click();
-    cy.location('pathname').should('include', 'sign-up');
-  });
-
-  it("Logo Click takes to home route '/'", () => {
-    cy.get('#logo').contains('ArtBadge').click();
-    cy.location('pathname').should('include', '');
+    // reload the page without using the cache
+    cy.reload(true);
   });
 });
