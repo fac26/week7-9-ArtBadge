@@ -24,7 +24,7 @@ The aim is to get more people to see more artwork, and to encourage them to shar
 
 <details>
 
-### What are you not building?
+#### What are you not building?
 
 We are not building a React Native app, an online database of art works, a general social network app and we're not building a site for galleries to advetise new exhibitions.
 
