@@ -7,7 +7,7 @@ export default function NavBar() {
     <nav className={style.NavContainer}>
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/explore-reflect">
             <Icon className={style.vector} icon="material-symbols:home" />
           </Link>
         </li>
