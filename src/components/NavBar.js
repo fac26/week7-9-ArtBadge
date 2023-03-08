@@ -8,7 +8,11 @@ export default function NavBar() {
       <ul>
         <li>
           <Link href="/">
-            <Icon className={style.vector} icon="material-symbols:home" />
+            <Icon
+              className={style.vector}
+              icon="material-symbols:home"
+              data-cy="home"
+            />
           </Link>
         </li>
         <li>
@@ -16,17 +20,26 @@ export default function NavBar() {
             <Icon
               className={style.vector}
               icon="material-symbols:help-center"
+              data-cy="help"
             />
           </Link>
         </li>
         <li>
           <Link href="/">
-            <Icon className={style.addButton} icon="material-symbols:add" />
+            <Icon
+              className={style.addButton}
+              icon="material-symbols:add"
+              data-cy="add"
+            />
           </Link>
         </li>
         <li>
           <Link href="/">
-            <Icon className={style.vector} icon="fa6-solid:ranking-star" />
+            <Icon
+              className={style.vector}
+              icon="fa6-solid:ranking-star"
+              data-cy="ranking-star"
+            />
           </Link>
         </li>
         <li>
@@ -34,6 +47,7 @@ export default function NavBar() {
             <Icon
               className={style.vector}
               icon="fluent:book-contacts-20-filled"
+              data-cy="book-contacts"
             />
           </Link>
         </li>

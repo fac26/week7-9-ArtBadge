@@ -4,6 +4,10 @@ context('Navigation', () => {
   });
 
   it('Passes', () => {
-    cy.get('.NavBar_vector__okJP0').should('exist');
+    cy.get('[data-cy="home"]').should('exist');
+    cy.get('[data-cy="help"]').should('exist');
+    cy.get('[data-cy="add"]').should('exist');
+    cy.get('[data-cy="ranking-star"]').should('exist');
+    cy.get('[data-cy="book-contacts"]').should('exist');
   });
 });
