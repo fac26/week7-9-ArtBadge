@@ -10,6 +10,7 @@
 /cypress/downloads
 /cypress/support/commands.js
 /cypress/support/component-index.html
+/cypress/support/component.js
 /cypress/support/e2e.js
 
 # next.js
