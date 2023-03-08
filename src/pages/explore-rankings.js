@@ -1,7 +1,6 @@
-import styles from '@/styles/ExploreReflect.module.css';
 import Layout from '../components/Layout'
 
-export default function ExploreReflect() {
+export default function ExploreRankings() {
   return (
     <Layout>
       <h1 className={styles.test}>Rankings!</h1>
