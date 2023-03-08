@@ -7,7 +7,7 @@ export default function NavBar() {
     <nav className={style.NavContainer}>
       <ul>
         <li>
-          <Link href="/">
+          <Link href="/explore-reflect">
             <Icon
               className={style.vector}
               icon="material-symbols:home"
@@ -25,7 +25,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/reflect-add-image">
             <Icon
               className={style.addButton}
               icon="material-symbols:add"
@@ -34,7 +34,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/explore-rankings">
             <Icon
               className={style.vector}
               icon="fa6-solid:ranking-star"
@@ -43,7 +43,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/reflect-personal-contact">
             <Icon
               className={style.vector}
               icon="fluent:book-contacts-20-filled"
