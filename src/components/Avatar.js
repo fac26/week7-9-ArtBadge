@@ -76,7 +76,7 @@ export default function Avatar({ uid, url, size, onUpload }) {
         </label>
         <input
           style={{
-            visibility: 'visible',
+            visibility: 'hidden',
             position: 'absolute',
           }}
           type="file"
