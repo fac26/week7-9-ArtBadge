@@ -8,7 +8,9 @@
 # testing
 /coverage
 /cypress/downloads
-/cypress/support
+/cypress/support/commands.js
+/cypress/support/component-index.html
+/cypress/support/e2e.js
 
 # next.js
 /.next/
