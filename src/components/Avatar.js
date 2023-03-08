@@ -65,10 +65,9 @@ export default function Avatar({ uid, url, size, onUpload }) {
           style={{ height: size, width: size }}
         />
       ) : (
-        <div
-          className="avatar no-image"
-          style={{ height: size, width: size }}
-        />
+        <div className="avatar no-image" style={{ height: size, width: size }}>
+          No avatar uploaded yet
+        </div>
       )}
       <div style={{ width: size }}>
         <label className="button primary block" htmlFor="single">
