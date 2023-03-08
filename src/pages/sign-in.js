@@ -2,6 +2,7 @@ import styles from '@/styles/SignIn.module.css';
 import { Auth } from '@supabase/auth-ui-react';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 import Account from '../components/Account';
+import Link from 'next/link';
 
 export default function SignIn() {
   const session = useSession();
@@ -17,6 +18,7 @@ export default function SignIn() {
           <Account session={session} />
         )}
       </div>
+      <Link href="/explore-reflect">Go to Landing Page!</Link>
     </>
   );
 }
