@@ -25,12 +25,12 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/explore-rankings">
             <Icon className={style.vector} icon="fa6-solid:ranking-star" />
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/reflect-personal-contact">
             <Icon
               className={style.vector}
               icon="fluent:book-contacts-20-filled"
