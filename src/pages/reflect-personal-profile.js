@@ -6,11 +6,5 @@ export default function ReflectPersonalProfile() {
   const session = useSession();
   const supabase = useSupabaseClient();
 
-  return (
-    <>
-      <h1 className={styles.test}>Reflect personal profile</h1>
-      <div>{JSON.stringify(session)}</div>
-      <div>{session.user.email}</div>
-    </>
-  );
+  return <h1 className={styles.test}>Reflect personal profile</h1>;
 }
