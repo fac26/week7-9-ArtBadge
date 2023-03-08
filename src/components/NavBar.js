@@ -20,7 +20,7 @@ export default function NavBar() {
           </Link>
         </li>
         <li>
-          <Link href="/">
+          <Link href="/reflect-add-image">
             <Icon className={style.addButton} icon="material-symbols:add" />
           </Link>
         </li>
