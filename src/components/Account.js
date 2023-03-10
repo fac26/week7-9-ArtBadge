@@ -55,7 +55,7 @@ export default function Account({ session }) {
 
       let { error } = await supabase.from('profiles').upsert(updates);
       if (error) throw error;
-      alert('Profile has updated!');
+      alert('Profile updated!');
       window.location.href = '/explore-reflect';
     } catch (error) {
       alert('Error updating the data!');
