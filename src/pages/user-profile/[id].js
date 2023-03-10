@@ -4,10 +4,12 @@ import Layout from '@/components/Layout';
 import supabase from '../../../api.js';
 import { useRouter } from 'next/router';
 
-export async function getStaticProps() {
-  // console.log(supabase.auth.user());
-  const { data, error } = await supabase.from('profiles').select();
-  return { props: { profile } };
+export async function getStaticProps({ params }) {
+  const { data, error } = await supabase
+    .from('profiles')
+    .select()
+    .eq('username', params.id);
+  return { props: { data } };
 }
 
 export async function getStaticPaths() {
@@ -19,13 +21,13 @@ export async function getStaticPaths() {
   return { paths, fallback: true };
 }
 
-export default function UserProfile({ profile }) {
+export default function UserProfile({ data }) {
   const router = useRouter();
   // console.log(JSON.stringify(props));
-  console.log(props.post);
+  console.log({ data });
   return (
     <Layout>
-      <h1 className={styles.test}>Hello {profile.username}</h1>
+      <h1 className={styles.test}>{data[0].username}</h1>
       <ArtCard />
     </Layout>
   );
