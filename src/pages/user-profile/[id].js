@@ -48,7 +48,7 @@ export default function UserProfile({ userProfile }) {
 
   return (
     <Layout>
-      <h1 className={styles.test}>{userProfile.username}</h1>
+      <h1 className={styles.test}>{userProfile?.username || 'Loading...'}</h1>
       <div className={styles.line}>
         <hr className={styles.hr} />
         <div className={styles.heading}>My Posts</div>
