@@ -3,19 +3,16 @@ import ArtCard from '@/components/ArtCard';
 import Layout from '@/components/Layout';
 import supabase from '../../../api.js';
 import { useRouter } from 'next/router';
+import { useEffect, useState } from 'react';
 
 export async function getStaticProps({ params }) {
   const { data, error_user } = await supabase
     .from('profiles')
     .select()
     .eq('username', params.id);
-  const { posts, error_posts } = await supabase
-    .from('artData')
-    .select()
-    .eq('user_uuid', data.id);
-  console.log(posts);
-  console.log(data.id);
-  return { props: { data: data[0] } };
+
+  const userProfile = data[0];
+  return { props: { userProfile: userProfile } };
 }
 
 export async function getStaticPaths() {
@@ -27,15 +24,39 @@ export async function getStaticPaths() {
   return { paths, fallback: true };
 }
 
-export default function UserProfile({ data }) {
-  const router = useRouter();
-  // console.log(JSON.stringify(props));
-  // console.log({ data });
-  // console.log({ posts });
+export default function UserProfile({ userProfile }) {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const { data, error } = await supabase
+        .from('artData')
+        .select()
+        .eq('user_uuid', userProfile.id);
+
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        return;
+      }
+
+      setPosts(data);
+    }
+
+    fetchPosts();
+  }, [userProfile]);
+
   return (
     <Layout>
-      <h1 className={styles.test}>{data.username}</h1>
-      <ArtCard />
+      <h1 className={styles.test}>{userProfile.username}</h1>
+      <div className={styles.line}>
+        <hr className={styles.hr} />
+        <div className={styles.heading}>My Posts</div>
+        <hr className={styles.hr} />
+      </div>
+      <div className={styles.artGrid}>
+        {posts && posts.map((post) => <ArtCard key={post.id} post={post} />)}
+      </div>
     </Layout>
   );
 }
