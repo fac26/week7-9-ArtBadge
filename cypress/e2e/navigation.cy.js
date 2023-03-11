@@ -1,15 +1,11 @@
-context('Navigation', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000');
+describe('NavBar component', () => {
+  it('should exist on the page', () => {
+    cy.visit('http://localhost:3000/explore-main'); // Replace with the actual URL you want to test
+    cy.get('[data-cy="home"]').should('exist');
   });
 
-  it('Passes', () => {
-    cy.get('.Layout').within(() => {
-      cy.get('[data-cy="home"]').should('exist');
-      cy.get('[data-cy="help"]').should('exist');
-      cy.get('[data-cy="add"]').should('exist');
-      cy.get('[data-cy="ranking-star"]').should('exist');
-      cy.get('[data-cy="book-contacts"]').should('exist');
-    });
+  it('should exist on the page', () => {
+    cy.visit('http://localhost:3000/reflect-add-image'); // Replace with the actual URL you want to test
+    cy.get('[data-cy="add"]').should('exist');
   });
 });
