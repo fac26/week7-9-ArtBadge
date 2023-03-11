@@ -18,7 +18,6 @@ export default function SignIn() {
           <Account session={session} />
         )}
       </div>
-      <Link href="/explore-reflect">Go to Landing Page!</Link>
     </>
   );
 }

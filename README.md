@@ -99,7 +99,11 @@ We will ensure our project is accessible to as many users as possible by:
 
 #### Did your team work effectively?
 
+Clear communication when creating Kanban board made us more effective at meeting tasks and completing them, timeboxing tasks enabled us to laser focus and not fall down rabbit holes, pair programming ment we could rely on one another when hitting challenges.      
+
 #### What would you do differently next time?
+
+Ask for help earlier rather then struggle by ourselves and make best use of mentors and help and soloutions. Read documentation more thourougly before starting work rather than being put off by it's dense and sometimes messy nature.   
 
 </details>
 
@@ -108,6 +112,8 @@ We will ensure our project is accessible to as many users as possible by:
 <details>
 
 #### What did you find out from user testing?
+
+The homepage received mixed feedback regarding the visibility of certain features such as the question mark and 'Explore' button. The 'Reflect' wording was also found to be confusing. Users requested a direct upload option and a clearer distinction between other users' uploads and their own. The navigation bar's address book icon was unclear, and a friends list was requested. The art card number was unclear, and users suggested using a star rating system. The form could benefit from text instructions, fewer steps, and a sense of achievement at the end. New features requested include a news feed, gallery deals, top-rated photos, and a ranking list. Users also requested icons instead of wording and social share buttons. The app's contrast and colors need to be improved.
 
 </details>
 

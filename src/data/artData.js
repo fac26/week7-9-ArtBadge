@@ -1,4 +1,4 @@
-import supabase from '../config/supabaseClient.js';
+import supabase from '../../api.js';
 
 const { data, error } = await supabase.from('artData').insert([
   {
