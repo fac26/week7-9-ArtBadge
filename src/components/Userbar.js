@@ -2,13 +2,7 @@ import React, { useState, useEffect } from 'react';
 import supabase from '../../api.js';
 import Image from 'next/image';
 import styles from '../styles/Userbar.module.css';
-import { Link, useHistory } from 'react-router-dom';
-
-function BackLink() {
-  const history = useHistory();
-
-  return <Link onClick={history.goBack}>Go Back</Link>;
-}
+import BackLink from './BackLink';
 
 const Userbar = ({ session }) => {
   const [user, setUser] = useState({
@@ -16,6 +10,7 @@ const Userbar = ({ session }) => {
     name: '',
     email: '',
     avatar_url: null,
+    username: '',
   });
   const [avatarUrl, setAvatarUrl] = useState(null); // Add this state variable
 
