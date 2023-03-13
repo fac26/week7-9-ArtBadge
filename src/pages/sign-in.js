@@ -13,7 +13,7 @@ export default function SignIn() {
       <h1 className={styles.test}>Sign Up / Sign In</h1>
       <div className="container">
         {!session ? (
-          <Auth supabaseClient={supabase} />
+          <Auth supabaseClient={supabase} providers />
         ) : (
           <Account session={session} />
         )}

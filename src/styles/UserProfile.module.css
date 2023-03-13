@@ -1,3 +1,21 @@
 .test {
   color: blueviolet;
 }
+
+.artGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr {
+  width: 40%;
+  margin: 0 2rem;
+}
