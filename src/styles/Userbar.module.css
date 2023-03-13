@@ -1,0 +1,17 @@
+.image {
+    border-radius: 15rem;
+    object-fit: cover;
+  }
+
+  .badge {
+    background-color: blue;
+    border-radius: 50%;
+    width: 2rem;
+    height: 2rem;
+    color: white;
+    
+    /* new properties */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
