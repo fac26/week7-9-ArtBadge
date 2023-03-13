@@ -4,6 +4,7 @@ import Layout from '@/components/Layout';
 import supabase from '../../../api.js';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
+// import Userbar from '@/components/Userbar.js';
 
 export async function getStaticProps({ params }) {
   const { data, error_user } = await supabase
@@ -48,6 +49,7 @@ export default function UserProfile({ userProfile }) {
 
   return (
     <Layout>
+      {/* <Userbar userprofile={true} /> */}
       <h1 className={styles.test}>{userProfile?.username || 'Loading...'}</h1>
       <div className={styles.line}>
         <hr className={styles.hr} />
