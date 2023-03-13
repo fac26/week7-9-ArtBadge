@@ -9,7 +9,7 @@ export async function getStaticProps({ params }) {
   const { data, error_user } = await supabase
     .from('profiles')
     .select()
-    .eq('username', params.id);
+    .eq('id', params.id);
 
   const userProfile = data[0];
   return { props: { userProfile: userProfile } };
@@ -19,7 +19,7 @@ export async function getStaticPaths() {
   const { data, error } = await supabase.from('profiles').select();
   const profiles = data ? data : null;
   const paths = profiles.map((profile) => ({
-    params: { id: `${profile.username}` },
+    params: { id: `${profile.id}` },
   }));
   return { paths, fallback: true };
 }
