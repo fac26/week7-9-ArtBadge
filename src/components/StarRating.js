@@ -1,12 +1,6 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 
-const HalfStar = ({ onClick }) => (
-  <div onClick={onClick}>
-    <Icon color="#FFD700" icon="tabler:star-half-filled" />
-  </div>
-);
-
 const Star = ({ filled, halfFilled, onClick }) => (
   <div onClick={onClick}>
     {halfFilled ? (

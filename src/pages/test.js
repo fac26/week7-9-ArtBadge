@@ -8,9 +8,5 @@ import SetStarRating from '@/components/StarRating';
 import Star from '@/components/StarRating';
 
 export default function Home() {
-  return (
-    <>
-      <SetStarRating />
-    </>
-  );
+  return <SetStarRating />;
 }
