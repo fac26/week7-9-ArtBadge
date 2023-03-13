@@ -11,12 +11,6 @@ const Star = ({ filled, onClick }) => (
   </div>
 );
 
-const HalfStar = ({ onClick }) => (
-  <div onClick={onClick}>
-    <Icon color="#FFD700" icon="tabler:star-half-filled" />
-  </div>
-);
-
 export default function SetStarRating() {
   const [value, setValue] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(null);
@@ -30,7 +24,6 @@ export default function SetStarRating() {
       setValue(starIndex + 1);
     }
   };
-
   const handleStarHover = (starIndex) => {
     setHoveredStar(starIndex);
   };
