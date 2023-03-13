@@ -1,9 +1,17 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
 
-const Star = ({ filled, onClick }) => (
+const HalfStar = ({ onClick }) => (
   <div onClick={onClick}>
-    {filled ? (
+    <Icon color="#FFD700" icon="tabler:star-half-filled" />
+  </div>
+);
+
+const Star = ({ filled, halfFilled, onClick }) => (
+  <div onClick={onClick}>
+    {halfFilled ? (
+      <Icon color="#FFD700" icon="tabler:star-half-filled" />
+    ) : filled ? (
       <Icon color="#FFD700" icon="ic:round-star" />
     ) : (
       <Icon color="#8d939e" icon="ic:round-star-outline" />
@@ -15,17 +23,13 @@ export default function SetStarRating() {
   const [value, setValue] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(null);
 
-  const handleStarClick = (starIndex) => {
-    if (value === starIndex + 1) {
-      // If the clicked star is already selected, deselect it
-      setValue(0);
-    } else {
-      // Otherwise, set the value to the index of the clicked star
-      setValue(starIndex + 1);
-    }
+  const handleStarClick = (starIndex, isHalf) => {
+    const newValue = isHalf ? starIndex + 0.5 : starIndex + 1;
+    setValue(newValue === value ? 0 : newValue);
   };
-  const handleStarHover = (starIndex) => {
-    setHoveredStar(starIndex);
+
+  const handleStarHover = (starIndex, isHalf) => {
+    setHoveredStar(isHalf ? starIndex + 0.5 : starIndex);
   };
 
   const handleMouseLeave = () => {
@@ -33,20 +37,22 @@ export default function SetStarRating() {
   };
 
   const filledStars = Math.floor(value);
-  const hasHalfStar = value - filledStars >= 0.5;
+  const hasHalfStar =
+    value - filledStars >= 0.25 && value - filledStars <= 0.75;
 
   return (
     <div onMouseLeave={handleMouseLeave}>
       {[...Array(5)].map((_, i) => {
-        const filled = i < filledStars || (i === filledStars && hasHalfStar);
+        const filled = i < filledStars;
+        const halfFilled = i === filledStars && hasHalfStar;
         const isHovered = i <= hoveredStar;
 
         return (
           <Star
             key={i}
             filled={filled}
-            onClick={() => handleStarClick(i)}
-            onMouseEnter={() => handleStarHover(i)}
+            onClick={() => handleStarClick(i, halfFilled)}
+            onMouseEnter={() => handleStarHover(i, halfFilled)}
           />
         );
       })}
