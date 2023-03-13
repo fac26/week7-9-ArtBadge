@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Icon } from '@iconify/react';
-import styles from '../styles/Layout.module.css';
 
 const Star = ({ filled, onClick }) => (
   <div onClick={onClick}>
@@ -35,8 +34,6 @@ export default function SetStarRating() {
 
   const filledStars = Math.floor(value);
   const hasHalfStar = value - filledStars >= 0.5;
-
-  console.log(value);
 
   return (
     <div onMouseLeave={handleMouseLeave}>
