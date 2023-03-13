@@ -17,7 +17,8 @@ const HalfStar = ({ onClick }) => (
   </div>
 );
 
-export default function SetStarRating({ value, setValue }) {
+export default function SetStarRating() {
+  const [value, setValue] = useState(0);
   const [hoveredStar, setHoveredStar] = useState(null);
 
   const handleStarClick = (starIndex) => {
