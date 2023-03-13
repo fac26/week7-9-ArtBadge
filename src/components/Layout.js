@@ -9,8 +9,9 @@ export default function Layout({ children, home }) {
 
   return (
     <>
-      <header className={styles.userbar}>{session ? <Userbar session={session}/> : null}</header>
-
+      <header className={styles.userbar}>
+        {session ? <Userbar session={session} /> : null}
+      </header>
       <div className={styles.test}>
         <main>{children}</main>
         {!home ? <NavBar /> : null}

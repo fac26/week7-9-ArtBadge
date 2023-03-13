@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import supabase from '../../api.js';
 import Image from 'next/image';
 import styles from '../styles/Userbar.module.css';
-import BackLink from './BackLink';
+import BackButton from './BackButton';
+import Link from 'next/link';
 
 const Userbar = ({ session }) => {
   const [user, setUser] = useState({
@@ -54,17 +55,19 @@ const Userbar = ({ session }) => {
 
   return (
     <>
-      <BackLink />
+      <BackButton />
       <p>{user.username}</p>
       <p className={styles.badge}>{user.badge_level}</p>
       {avatarUrl && (
-        <Image
-          src={avatarUrl}
-          className={styles.image}
-          width={60}
-          height={60}
-          alt="avatar"
-        />
+        <Link href={`/user-profile/${user.id}`}>
+          <Image
+            src={avatarUrl}
+            className={styles.image}
+            width={60}
+            height={60}
+            alt="avatar"
+          />
+        </Link>
       )}
     </>
   );
