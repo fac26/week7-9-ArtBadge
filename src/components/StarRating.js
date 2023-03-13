@@ -10,11 +10,21 @@ const HalfStar = ({ onClick }) => (
 const Star = ({ filled, halfFilled, onClick }) => (
   <div onClick={onClick}>
     {halfFilled ? (
-      <Icon color="#FFD700" icon="tabler:star-half-filled" />
+      <Icon
+        color="#FFD700"
+        icon="tabler:star-half-filled"
+        width={100}
+        height={100}
+      />
     ) : filled ? (
-      <Icon color="#FFD700" icon="ic:round-star" />
+      <Icon color="#FFD700" icon="ic:round-star" width={100} height={100} />
     ) : (
-      <Icon color="#8d939e" icon="ic:round-star-outline" />
+      <Icon
+        color="#8d939e"
+        icon="ic:round-star-outline"
+        width={100}
+        height={100}
+      />
     )}
   </div>
 );
