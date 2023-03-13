@@ -6,12 +6,10 @@ import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
 export default function Layout({ children, home }) {
   const session = useSession();
   const supabase = useSupabaseClient();
-  console.log('session', session);
-  console.log('supabase', supabase);
-  // const session = true;
+
   return (
     <>
-      <header className="userbar">{session ? <Userbar /> : null}</header>
+      <header className="userbar">{session ? <Userbar session={session}/> : null}</header>
 
       <div className={styles.test}>
         <main>{children}</main>
