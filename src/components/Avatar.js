@@ -25,44 +25,14 @@ export default function Avatar({ uid, url, size, onUpload }) {
     }
   }
 
-  // const deleteAvatar = async () => {
-  //   try {
-  //     await supabase.storage.from('avatars').remove(`${uid}.png`);
-  //     setAvatarUrl(null);
-  //   } catch (error) {
-  //     console.log('Error deleting image: ', error);
-  //   }
-  // };
-
-  // const deleteAvatar = async (event) => {
-  //   try {
-  //     setUploading(true);
-
-  //     if (!event.target.files || event.target.files.length === 0) {
-  //       throw new Error('blah');
-  //     }
-
-  //     const file = event.target.files[0];
-  //     const fileExt = file.name.split('.').pop();
-  //     const fileName = `${uid}.${fileExt}`;
-  //     const filePath = `${fileName}`;
-
-  //     let { error: deleteError } = await supabase.storage
-  //       .from('avatars')
-  //       .update(filePath, file, { cacheControl: '3600', upsert: false });
-
-  //     if (deleteError) {
-  //       throw deleteError;
-  //     }
-
-  //     onUpload(filePath);
-  //   } catch (error) {
-  //     alert('Error deleting avatar!');
-  //     console.log(error);
-  //   } finally {
-  //     setUploading(false);
-  //   }
-  // };
+  const deleteAvatar = async () => {
+    try {
+      await supabase.storage.from('avatars').remove(`${uid}.png`);
+      setAvatarUrl(null);
+    } catch (error) {
+      console.log('Error deleting image: ', error);
+    }
+  };
 
   const uploadAvatar = async (event) => {
     try {
