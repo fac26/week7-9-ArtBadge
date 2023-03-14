@@ -54,14 +54,14 @@ const UserHeader = ({ userProfile }) => {
   return (
     <div className={styles.container}>
       <div className={styles.info_container}>
-        <div classname={styles.name_badge}>
+        <div className={styles.name_badge}>
           <h3>{userProfile.full_name}</h3>
           <p className={styles.badge}>{userProfile.badge_level}</p>
         </div>
         <div classname={styles.info}>
           <p>#{userProfile.username}</p>
         </div>
-        <div classname={styles.info}>
+        <div className={styles.info}>
           <p>Joined {formattedDate}</p>
         </div>
       </div>
