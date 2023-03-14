@@ -8,8 +8,7 @@ import Logo from '@/components/Logo';
 export default function Home() {
   return (
     <Layout home>
-      <h1 className={styles.test}>Homepage!</h1>
-      <Logo />
+      <Logo className={styles.logo} />
       <Link href="/sign-in">Click here to enter ArtBadge</Link>
     </Layout>
   );
