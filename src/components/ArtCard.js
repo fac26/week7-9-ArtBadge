@@ -3,10 +3,12 @@ import styles from '../styles/ArtCard.module.css';
 import Layout from './Layout';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
+import Link from 'next/link';
 
 export default function ArtCard({ post }) {
   const { title, image, location, rating } = post;
   return (
+    <Link href={`/artwork/${post.id}`}>
     <div className={styles.cardContainer}>
       <Image
         src={image}
@@ -22,5 +24,6 @@ export default function ArtCard({ post }) {
         <p>{location}</p>
       </div>
     </div>
+    </Link>
   );
 }
