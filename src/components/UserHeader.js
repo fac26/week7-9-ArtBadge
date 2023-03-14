@@ -7,11 +7,17 @@ import Link from 'next/link';
 const UserHeader = ({ userProfile }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
+  const [formattedDate, setFormattedDate] = useState(null);
 
-  const timestamp = userProfile.created_at;
-  const date = new Date(timestamp);
-  const options = { month: 'long', year: 'numeric' };
-  const formattedDate = date.toLocaleDateString('en-US', options);
+  useEffect(() => {
+    if (userProfile.created_at) {
+      const timestamp = userProfile.created_at;
+      const date = new Date(timestamp);
+      const options = { month: 'long', year: 'numeric' };
+      const formattedDate = date.toLocaleDateString('en-US', options);
+      setFormattedDate(formattedDate);
+    }
+  }, [userProfile.created_at]);
 
   useEffect(() => {
     if (userProfile.avatar_url && !avatarDownloaded) {
