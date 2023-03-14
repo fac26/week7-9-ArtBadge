@@ -7,7 +7,8 @@ import { useEffect, useState } from 'react';
 import UserHeader from '@/components/UserHeader.js';
 import { useSession } from '@supabase/auth-helpers-react';
 
-export async function getStaticProps({ params }) {
+export async function getServerSideProps(context) {
+  const { params } = context;
   const { data, error_user } = await supabase
     .from('profiles')
     .select()
@@ -15,42 +16,30 @@ export async function getStaticProps({ params }) {
     .single();
 
   const userProfile = data ? data : null;
+  const { data: postsData, error: postsError } = await supabase
+    .from('artData')
+    .select()
+    .eq('user_uuid', params.id);
 
-  return { props: { userProfile: userProfile } };
+  if (postsError) {
+    // eslint-disable-next-line no-console
+    console.log(postsError);
+    return {
+      notFound: true,
+    };
+  }
+
+  return {
+    props: {
+      userProfile,
+      posts: postsData ? postsData : [],
+    },
+  };
 }
 
-export async function getStaticPaths() {
-  const { data, error } = await supabase.from('profiles').select();
-  const profiles = data ? data : null;
-  const paths = profiles.map((profile) => ({
-    params: { id: `${profile.id}` },
-  }));
-  return { paths, fallback: true };
-}
-
-export default function UserProfile({ userProfile }) {
-  const [posts, setPosts] = useState([]);
+export default function UserProfile({ userProfile, posts }) {
   const session = useSession();
   const isUserProfile = session?.user.id === userProfile.id;
-
-  useEffect(() => {
-    async function fetchPosts() {
-      const { data, error } = await supabase
-        .from('artData')
-        .select()
-        .eq('user_uuid', userProfile.id);
-
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.log(error);
-        return;
-      }
-
-      setPosts(data);
-    }
-
-    fetchPosts();
-  }, [userProfile]);
 
   return (
     <Layout>
