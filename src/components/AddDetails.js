@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const AddDetails = () => {
   const [title, setTitle] = useState('');
@@ -27,8 +27,8 @@ const AddDetails = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify({ dataToStore }));
-  }, [{ dataToStore }]);
+    localStorage.setItem('data', JSON.stringify(dataToStore));
+  }, [dataToStore]);
 
   return (
     <div className="addDetails">
