@@ -8,12 +8,12 @@ import UserHeader from '@/components/UserHeader.js';
 import { useSession } from '@supabase/auth-helpers-react';
 
 export async function getStaticProps({ params }) {
-  const { data, error_user } = await supabase
+  const { userProfile, error_user } = await supabase
     .from('profiles')
     .select()
-    .eq('id', params.id);
+    .eq('id', params.id)
+    .single();
 
-  const userProfile = data[0];
   return { props: { userProfile: userProfile } };
 }
 
