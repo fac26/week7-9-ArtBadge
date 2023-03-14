@@ -29,7 +29,7 @@ export async function getStaticPaths() {
 
 export default function UserProfile({ userProfile }) {
   const [posts, setPosts] = useState([]);
-  const session = useSession();
+  // const session = useSession();
 
   useEffect(() => {
     async function fetchPosts() {
@@ -53,7 +53,7 @@ export default function UserProfile({ userProfile }) {
   return (
     <Layout>
       {userProfile ? (
-        <UserHeader userProfile={userProfile} session={session} />
+        <UserHeader userProfile={userProfile} />
       ) : (
         <div>Loading...</div>
       )}

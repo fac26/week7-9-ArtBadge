@@ -3,19 +3,21 @@ import supabase from '../../api.js';
 import Image from 'next/image';
 import styles from '../styles/UserHeader.module.css';
 import Link from 'next/link';
+import { useSession } from '@supabase/auth-helpers-react';
 
 const UserHeader = ({ userProfile }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
   const [formattedDate, setFormattedDate] = useState(null);
   const [isUserProfile, setIsUserProfile] = useState(false);
+  const [session, loading] = useSession();
 
   useEffect(() => {
     if (userProfile.id) {
-      const isUserProfile = session.user.id === userProfile.id;
-      setIsUserProfile(isUserProfile);
+      const booleanValue = session.user.id === userProfile.id;
+      setIsUserProfile(booleanValue);
     }
-  }, [userProfile.id, session?.user.id]);
+  }, [session.user.id, userProfile.id]);
 
   useEffect(() => {
     if (userProfile.created_at) {
