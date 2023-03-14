@@ -8,6 +8,11 @@ const UserHeader = ({ userProfile, isUserProfile }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
 
+  const timestamp = userProfile.created_at;
+  const date = new Date(timestamp);
+  const options = { month: 'long', year: 'numeric' };
+  const formattedDate = date.toLocaleDateString('en-US', options);
+
   useEffect(() => {
     if (userProfile.avatar_url && !avatarDownloaded) {
       downloadImage(userProfile.avatar_url);
@@ -33,15 +38,15 @@ const UserHeader = ({ userProfile, isUserProfile }) => {
   return (
     <div className={styles.container}>
       <div className={styles.info_container}>
-        <div classname={styles.info}>
-          <p>{userProfile.name}</p>
+        <div classname={styles.name_badge}>
+          <h3>{userProfile.full_name}</h3>
           <p className={styles.badge}>{userProfile.badge_level}</p>
         </div>
         <div classname={styles.info}>
-          <p>{userProfile.username}</p>
+          <p>#{userProfile.username}</p>
         </div>
         <div classname={styles.info}>
-          <p>date joined...</p>
+          <p>Joined {formattedDate}</p>
         </div>
       </div>
       {avatarUrl && (
