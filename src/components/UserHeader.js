@@ -4,13 +4,18 @@ import Image from 'next/image';
 import styles from '../styles/UserHeader.module.css';
 import Link from 'next/link';
 
-const UserHeader = ({ userProfile, isUserProfile }) => {
+const UserHeader = ({ userProfile }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
   const [formattedDate, setFormattedDate] = useState(null);
+  const [isUserProfile, setIsUserProfile] = useState(false);
 
-  // eslint-disable-next-line no-console
-  console.log(isUserProfile);
+  useEffect(() => {
+    if (userProfile.id) {
+      const isUserProfile = session.user.id === userProfile.id;
+      setIsUserProfile(isUserProfile);
+    }
+  }, [userProfile.id, session?.user.id]);
 
   useEffect(() => {
     if (userProfile.created_at) {
