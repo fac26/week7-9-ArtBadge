@@ -2,13 +2,11 @@ import styles from '@/styles/UserProfile.module.css';
 import ArtCard from '@/components/ArtCard';
 import Layout from '@/components/Layout';
 import supabase from '../../../api.js';
-import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import UserHeader from '@/components/UserHeader.js';
 import { useSession } from '@supabase/auth-helpers-react';
 
-export async function getServerSideProps(context) {
-  const { params } = context;
+export async function getStaticProps({ params }) {
   const { data, error_user } = await supabase
     .from('profiles')
     .select()
@@ -16,30 +14,42 @@ export async function getServerSideProps(context) {
     .single();
 
   const userProfile = data ? data : null;
-  const { data: postsData, error: postsError } = await supabase
-    .from('artData')
-    .select()
-    .eq('user_uuid', params.id);
 
-  if (postsError) {
-    // eslint-disable-next-line no-console
-    console.log(postsError);
-    return {
-      notFound: true,
-    };
-  }
-
-  return {
-    props: {
-      userProfile,
-      posts: postsData ? postsData : [],
-    },
-  };
+  return { props: { userProfile: userProfile } };
 }
 
-export default function UserProfile({ userProfile, posts }) {
+export async function getStaticPaths() {
+  const { data, error } = await supabase.from('profiles').select();
+  const profiles = data ? data : null;
+  const paths = profiles.map((profile) => ({
+    params: { id: `${profile.id}` },
+  }));
+  return { paths, fallback: true };
+}
+
+export default function UserProfile({ userProfile }) {
+  const [posts, setPosts] = useState([]);
   const session = useSession();
-  const isUserProfile = session?.user.id === userProfile.id;
+  // const isUserProfile = session?.user.id === userProfile.id;
+
+  useEffect(() => {
+    async function fetchPosts() {
+      const { data, error } = await supabase
+        .from('artData')
+        .select()
+        .eq('user_uuid', userProfile.id);
+
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.log(error);
+        return;
+      }
+
+      setPosts(data);
+    }
+
+    fetchPosts();
+  }, [userProfile]);
 
   return (
     <Layout>
