@@ -5,7 +5,7 @@ import styles from '../styles/Userbar.module.css';
 import BackButton from './BackButton';
 import Link from 'next/link';
 
-const Userbar = ({ session }) => {
+const Userbar = ({ session, isUserProfile }) => {
   const [user, setUser] = useState({
     id: null,
     name: '',
@@ -55,20 +55,27 @@ const Userbar = ({ session }) => {
 
   return (
     <>
-      <BackButton />
-      <p>{user.username}</p>
-      <p className={styles.badge}>{user.badge_level}</p>
-      {avatarUrl && (
-        <Link href={`/user-profile/${user.id}`}>
-          <Image
-            src={avatarUrl}
-            className={styles.image}
-            width={60}
-            height={60}
-            alt="avatar"
-          />
-        </Link>
-      )}
+      <div className={styles.header_container}>
+        <div className={styles.back_button}>
+        <BackButton />
+        </div>
+        <p>{user.username}</p>
+        <p className={styles.badge}>{user.badge_level}</p>
+        {avatarUrl && (
+          <Link href={`/user-profile/${user.id}`}>
+            <Image
+              src={avatarUrl}
+              className={styles.image}
+              width={60}
+              height={60}
+              alt="avatar"
+            />
+          </Link>
+        )}
+      </div>
+      <div className={styles.line}>
+        <hr className={styles.hr} />
+      </div>
     </>
   );
 };

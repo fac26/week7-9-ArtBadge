@@ -4,7 +4,8 @@ import Layout from '@/components/Layout';
 import supabase from '../../../api.js';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-// import Userbar from '@/components/Userbar.js';
+import UserHeader from '@/components/UserHeader.js';
+import { useSession } from '@supabase/auth-helpers-react';
 
 export async function getStaticProps({ params }) {
   const { data, error_user } = await supabase
@@ -27,6 +28,8 @@ export async function getStaticPaths() {
 
 export default function UserProfile({ userProfile }) {
   const [posts, setPosts] = useState([]);
+  const session = useSession();
+  const isUserProfile = session?.user.id === userProfile.id;
 
   useEffect(() => {
     async function fetchPosts() {
@@ -49,8 +52,7 @@ export default function UserProfile({ userProfile }) {
 
   return (
     <Layout>
-      {/* <Userbar userprofile={true} /> */}
-      <h1 className={styles.test}>{userProfile?.username || 'Loading...'}</h1>
+      <UserHeader userProfile={userProfile} isUserProfile={isUserProfile} />
       <div className={styles.line}>
         <hr className={styles.hr} />
         <div className={styles.heading}>My Posts</div>

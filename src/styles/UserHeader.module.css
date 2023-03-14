@@ -1,0 +1,47 @@
+.container {
+  max-width: 60rem;
+  height: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 10px;
+  margin-top: 76px;
+}
+
+.image {
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+.info_container {
+  max-width: 20rem;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  width: 100%;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.badge {
+  background-color: orange;
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
