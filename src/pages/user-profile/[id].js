@@ -53,7 +53,11 @@ export default function UserProfile({ userProfile }) {
 
   return (
     <Layout>
-      <UserHeader userProfile={userProfile}/>
+      {userProfile ? (
+        <UserHeader userProfile={userProfile} />
+      ) : (
+        <div>Loading...</div>
+      )}
       <div className={styles.line}>
         <hr className={styles.hr} />
         <div className={styles.heading}>My Posts</div>
