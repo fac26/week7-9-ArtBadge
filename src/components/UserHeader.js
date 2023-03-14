@@ -4,7 +4,7 @@ import Image from 'next/image';
 import styles from '../styles/UserHeader.module.css';
 import Link from 'next/link';
 
-const UserHeader = ({ userProfile, isUserProfile }) => {
+const UserHeader = ({ userProfile }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
 
