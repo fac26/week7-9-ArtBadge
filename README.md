@@ -216,7 +216,7 @@ The second test file verifies that the sign-in functionality is working correctl
 #### Did writing automated tests catch any bugs?
 
 - Although not 'bugs' as such, there were conflicts in the package-lock.json file whenever we pulled down from the remote `main` branch to the
-local `cypresstesting` branch, so as to have an up-to-date version of what was in the main. This is because the `main` branch had a lot of 
+local `cypresstesting` branch, so as to have an up-to-date version of what was in the `main`. This is because the `main` branch had a lot of 
 Supabase packages, as a result of downloading and installing Supabase, which had not featured in the `cypresstesting` branch. 
 Meanwhile, the `main` branch did not have any Cypress Testing packages, but the `cypresstesting` branch did, as a result of downloading 
 and installing Cypress Testing. The two appeared to clash, though Git allowed a combination.
