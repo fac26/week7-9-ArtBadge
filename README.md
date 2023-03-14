@@ -201,11 +201,20 @@ The homepage received mixed feedback regarding the visibility of certain feature
 
 ### Test
 
-<details>
-
 #### How did you verify your project worked correctly?
 
+We used Cypress end-to-end testing to verify that our project functions correctly.
+
 `Identify and create test scenarios which satisfy the project specification (S6)`
+
+We created two general tests replicating a user journey which takes them through our website, using Cypress Testing.
+The first tested our Navigation Bar component, which is prominent throughout our site, and allows the user to navigate the app via icons.
+In order to make the Cypress Testing work, we added `data-cy="[icon function]"` props to the original NavBar component, which the file in 
+Cypress Testing could then target. 
+
+
+
+
 
 #### Did writing automated tests catch any bugs?
 
