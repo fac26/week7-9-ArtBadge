@@ -10,7 +10,7 @@ const UserHeader = ({ userProfile }) => {
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
   const [formattedDate, setFormattedDate] = useState(null);
   const [isUserProfile, setIsUserProfile] = useState(false);
-  const [session, loading] = useSession();
+  const session = useSession();
 
   useEffect(() => {
     if (userProfile.id) {
