@@ -1,7 +1,7 @@
 .cardContainer {
   background-color: var(--card-background-colour);
   padding: 1rem;
-  height: 25rem;
+  height: 30rem;
   margin: 0;
   border-radius: .5rem;
   display: flex;
@@ -11,9 +11,9 @@
 }
 
 .image {
-  width: 300px;
-  height: 200px;
+  width: 90%;
   border-radius: .5rem;
+  object-fit: contain;
 }
 
 .locationDiv {
