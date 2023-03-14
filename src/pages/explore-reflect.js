@@ -9,19 +9,19 @@ export default function ExploreReflect() {
       <h2 className={styles.tag}>
         Upload and share your favourite artwork with your friends
       </h2>
-      <button>
-        <Link href="/explore-main">
+      <Link href="/explore-main">
+        <button>
           EXPLORE<br></br>
           new art that others have experienced
-        </Link>
-      </button>
+        </button>
+      </Link>
       <br></br>
-      <button>
-        <Link href="/reflect-personal-profile">
+      <Link href="/reflect-personal-profile">
+        <button>
           REFLECT<br></br>
           on art that you have seen
-        </Link>
-      </button>
+        </button>
+      </Link>
     </Layout>
   );
 }
