@@ -4,13 +4,13 @@ import SetStarRating from './StarRating';
 const AddDetails = () => {
   const [title, setTitle] = useState('');
   const [artist, setArtist] = useState('');
-  const [rating, setRating] = useState('');
   const [location, setLocation] = useState('');
   const [time, setTime] = useState('');
   const [description, setDescription] = useState('');
+  const [rating, setRating] = useState(0);
 
-  const handleRatingChange = (value) => {
-    setRating(value);
+  const handleRatingChange = (rating) => {
+    setRating(rating);
   };
 
   const handleSubmit = async (e) => {
@@ -32,7 +32,7 @@ const AddDetails = () => {
   };
 
   useEffect(() => {
-    localStorage.setItem('data', JSON.stringify(dataToStore));
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(dataToStore));
   }, [dataToStore]);
 
   return (
@@ -57,16 +57,11 @@ const AddDetails = () => {
           required
         />
         <label htmlFor="rating">What would you rate it out of 5?*</label>
-        <SetStarRating onRatingChange={handleRatingChange} />
-
-        {/* <input
-          type="number"
-          id="rating"
-          className="addRating"
-          value={rating}
-          onChange={(e) => setRating(e.target.value)}
-          required
-        /> */}
+        <SetStarRating
+          onChange={handleRatingChange}
+          rating={rating}
+          setRating={setRating}
+        />
         <input
           type="text"
           id="location"
@@ -100,4 +95,5 @@ const AddDetails = () => {
   );
 };
 
+export const LOCAL_STORAGE_KEY = 'data';
 export default AddDetails;

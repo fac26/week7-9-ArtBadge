@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 
 const Star = ({ filled, halfFilled, onClick }) => (
@@ -23,13 +23,12 @@ const Star = ({ filled, halfFilled, onClick }) => (
   </div>
 );
 
-export default function SetStarRating() {
-  const [value, setValue] = useState(0);
+export default function SetStarRating({ rating, setRating }) {
   const [hoveredStar, setHoveredStar] = useState(null);
 
   const handleStarClick = (starIndex, isHalf) => {
     const newValue = isHalf ? starIndex + 0.5 : starIndex + 1;
-    setValue(newValue === value ? 0 : newValue);
+    setRating(newValue === rating ? 0 : newValue);
   };
 
   const handleStarHover = (starIndex, isHalf) => {
@@ -40,9 +39,9 @@ export default function SetStarRating() {
     setHoveredStar(null);
   };
 
-  const filledStars = Math.floor(value);
+  const filledStars = Math.floor(rating);
   const hasHalfStar =
-    value - filledStars >= 0.25 && value - filledStars <= 0.75;
+    rating - filledStars >= 0.25 && rating - filledStars <= 0.75;
 
   return (
     <div onMouseLeave={handleMouseLeave}>
@@ -59,7 +58,6 @@ export default function SetStarRating() {
           />
         );
       })}
-      <p>{value}</p>
     </div>
   );
 }

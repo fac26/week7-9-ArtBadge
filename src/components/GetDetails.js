@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import ViewStarRating from './ViewStarRating';
 
 export default function GetData() {
   const [data, setData] = useState(null);
@@ -16,7 +17,7 @@ export default function GetData() {
         <>
           <p>Title: {data.title}</p>
           <p>Artist: {data.artist}</p>
-          <p>Rating: {data.rating}</p>
+          <ViewStarRating value={data.rating} />
           <p>Location: {data.location}</p>
           <p>Time: {data.time}</p>
           <p>Description: {data.description}</p>
