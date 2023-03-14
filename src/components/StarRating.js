@@ -1,29 +1,65 @@
+import { useState } from 'react';
 import { Icon } from '@iconify/react';
-// import style from '../styles/StarRating.module.css';
 
-const Star = ({ filled }) =>
-  filled ? (
-    <Icon color="#FFD700" icon="ic:round-star" />
-  ) : (
-    <Icon color="#8d939e" icon="ic:round-star-outline" />
-  );
+const Star = ({ filled, halfFilled, onClick }) => (
+  <div onClick={onClick}>
+    {halfFilled ? (
+      <Icon
+        color="#FFD700"
+        icon="tabler:star-half-filled"
+        width={28}
+        height={28}
+      />
+    ) : filled ? (
+      <Icon color="#FFD700" icon="ic:round-star" width={28} height={28} />
+    ) : (
+      <Icon
+        color="#8d939e"
+        icon="ic:round-star-outline"
+        width={28}
+        height={28}
+      />
+    )}
+  </div>
+);
 
-const HalfStar = () => <Icon color="#FFD700" icon="tabler:star-half-filled" />;
+export default function SetStarRating() {
+  const [value, setValue] = useState(0);
+  const [hoveredStar, setHoveredStar] = useState(null);
 
-export default function StarRating({ value }) {
+  const handleStarClick = (starIndex, isHalf) => {
+    const newValue = isHalf ? starIndex + 0.5 : starIndex + 1;
+    setValue(newValue === value ? 0 : newValue);
+  };
+
+  const handleStarHover = (starIndex, isHalf) => {
+    setHoveredStar(isHalf ? starIndex + 0.5 : starIndex);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredStar(null);
+  };
+
   const filledStars = Math.floor(value);
-  const halfFilledStar = value - filledStars <= 0.5;
-  const emptyStars = 5 - filledStars - (halfFilledStar ? 1 : 0);
+  const hasHalfStar =
+    value - filledStars >= 0.25 && value - filledStars <= 0.75;
 
   return (
-    <div>
-      {[...Array(filledStars)].map((n, i) => (
-        <Star key={i} filled />
-      ))}
-      {halfFilledStar && <HalfStar />}
-      {[...Array(emptyStars)].map((n, i) => (
-        <Star key={i} filled={false} />
-      ))}
+    <div onMouseLeave={handleMouseLeave}>
+      {[...Array(5)].map((_, i) => {
+        const filled = i < filledStars;
+        const halfFilled = i === filledStars && hasHalfStar;
+
+        return (
+          <Star
+            key={i}
+            filled={filled}
+            onClick={() => handleStarClick(i, halfFilled)}
+            onMouseEnter={() => handleStarHover(i, halfFilled)}
+          />
+        );
+      })}
+      <p>{value}</p>
     </div>
   );
 }

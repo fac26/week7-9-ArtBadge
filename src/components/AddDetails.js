@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import SetStarRating from './StarRating';
 
 const AddDetails = () => {
   const [title, setTitle] = useState('');
@@ -7,6 +8,10 @@ const AddDetails = () => {
   const [location, setLocation] = useState('');
   const [time, setTime] = useState('');
   const [description, setDescription] = useState('');
+
+  const handleRatingChange = (value) => {
+    setRating(value);
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -51,17 +56,17 @@ const AddDetails = () => {
           placeholder="Who is it by?*"
           required
         />
-        <label htmlFor="rating">
-          What would you rate it out of 5?*(Half points are acceptable)
-        </label>
-        <input
+        <label htmlFor="rating">What would you rate it out of 5?*</label>
+        <SetStarRating onRatingChange={handleRatingChange} />
+
+        {/* <input
           type="number"
           id="rating"
           className="addRating"
           value={rating}
           onChange={(e) => setRating(e.target.value)}
           required
-        />
+        /> */}
         <input
           type="text"
           id="location"
