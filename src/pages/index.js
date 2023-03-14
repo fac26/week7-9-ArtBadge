@@ -9,7 +9,8 @@ export default function Home() {
   return (
     <Layout home>
       <h1 className={styles.test}>Homepage!</h1>
-      <Link href="/sign-in">Sign In/ Sign Up</Link>
+      <Logo />
+      <Link href="/sign-in">Click here to enter ArtBadge</Link>
     </Layout>
   );
 }
