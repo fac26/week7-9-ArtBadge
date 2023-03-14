@@ -5,7 +5,7 @@ import styles from '../styles/Userbar.module.css';
 import BackButton from './BackButton';
 import Link from 'next/link';
 
-const Userbar = ({ session, isUserProfile }) => {
+const Userbar = ({ session}) => {
   const [user, setUser] = useState({
     id: null,
     name: '',

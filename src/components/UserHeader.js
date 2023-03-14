@@ -5,19 +5,18 @@ import styles from '../styles/UserHeader.module.css';
 import Link from 'next/link';
 import { useSession } from '@supabase/auth-helpers-react';
 
-const UserHeader = ({ userProfile }) => {
+const UserHeader = ({ userProfile, session }) => {
   const [avatarUrl, setAvatarUrl] = useState(null);
   const [avatarDownloaded, setAvatarDownloaded] = useState(false);
   const [formattedDate, setFormattedDate] = useState(null);
   const [isUserProfile, setIsUserProfile] = useState(false);
-  const session = useSession();
 
   useEffect(() => {
-    if (userProfile.id) {
+    if (session && session.user && userProfile.id) {
       const booleanValue = session.user.id === userProfile.id;
       setIsUserProfile(booleanValue);
     }
-  }, [session.user.id, userProfile.id]);
+  }, [session, userProfile.id]);
 
   useEffect(() => {
     if (userProfile.created_at) {
@@ -58,7 +57,7 @@ const UserHeader = ({ userProfile }) => {
           <h3>{userProfile.full_name}</h3>
           <p className={styles.badge}>{userProfile.badge_level}</p>
         </div>
-        <div classname={styles.info}>
+        <div className={styles.info}>
           <p>#{userProfile.username}</p>
         </div>
         <div className={styles.info}>
