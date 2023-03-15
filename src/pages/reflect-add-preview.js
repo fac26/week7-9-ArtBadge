@@ -8,6 +8,7 @@ import { LOCAL_STORAGE_KEY } from '@/components/AddDetails';
 
 export default function ReflectAddPreview() {
   const [isPosting, setisPosting] = useState(null);
+  
   const handlePost = async () => {
     setisPosting(true);
     const data = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
@@ -19,10 +20,10 @@ export default function ReflectAddPreview() {
       <h1 className={styles.test}>Reflect add preview</h1>
       <GetData />
       <p>Would you like to post?</p>
-      <Link href="/reflect-personal-profile">
+      <Link href="/explore-reflect">
         <button>No, discard it</button>
       </Link>
-      <Link href="/reflect-personal-profile">
+      <Link href="/explore-reflect">
         <button onClick={handlePost}>Yes, post it</button>
       </Link>
     </Layout>
