@@ -1,5 +1,8 @@
-.test {
-  color: blueviolet;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  display: flex;
 }
 
 .artGrid {
