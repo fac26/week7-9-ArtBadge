@@ -2,5 +2,32 @@
   padding: 20px 0;
   justify-content: center;
   text-align: center;
-  margin-top: -30px;
+  margin-top: -2rem;
+}
+
+.inputBoxes {
+  padding-top: 15%;
+}
+
+.username {
+  width: 300px;
+  padding: 10px;
+  border-radius: 25px;
+  margin-top: 5px;
+}
+
+.email {
+  width: 300px;
+  padding: 10px;
+  border-radius: 25px;
+  color: white;
+}
+
+.button {
+  background-color: #d9d9d9;
+  padding: 10px 25px;
+  border-radius: 25px;
+  color: #8d939e;
+  width: 300px;
+  margin-top: 5px;
 }

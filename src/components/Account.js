@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useUser, useSupabaseClient } from '@supabase/auth-helpers-react';
 import Avatar from './Avatar';
+import styles from '../styles/Account.module.css';
 
 export default function Account({ session }) {
   const supabase = useSupabaseClient();
@@ -63,54 +64,59 @@ export default function Account({ session }) {
   }
 
   return (
-    <div className="form-widget">
-      <Avatar
-        uid={user.id}
-        url={avatar_url}
-        size={150}
-        onUpload={(url) => {
-          setAvatarUrl(url);
-          updateProfile({ username, avatar_url: url });
-        }}
-      />
-      <div>
-        <label htmlFor="email">Email</label>
-        <input
-          id="email"
-          type="text"
-          value={session.user.email}
-          disabled
-          required
+    <div className={styles.container}>
+      <div className="form-widget">
+        <Avatar
+          uid={user.id}
+          url={avatar_url}
+          size={150}
+          onUpload={(url) => {
+            setAvatarUrl(url);
+            updateProfile({ username, avatar_url: url });
+          }}
         />
-      </div>
-      <div>
-        <label htmlFor="username">Username</label>
-        <input
-          id="username"
-          type="text"
-          value={username || ''}
-          onChange={(e) => setUsername(e.target.value)}
-          required
-        />
-      </div>
+        <div className={styles.inputBoxes}>
+          <div>
+            <input
+              className={styles.email}
+              id="email"
+              type="text"
+              value={session.user.email}
+              disabled
+              required
+            />
+          </div>
+          <div>
+            <input
+              className={styles.username}
+              id="username"
+              type="text"
+              value={username || ''}
+              onChange={(e) => setUsername(e.target.value)}
+              placeholder="Enter your username"
+              required
+            />
+          </div>
 
-      <div>
-        <button
-          className="button primary block"
-          onClick={() => updateProfile({ username, avatar_url })}
-          disabled={loading}
-        >
-          {loading ? 'Loading ...' : 'Go to landing page'}
-        </button>
-      </div>
+          <div>
+            <button
+              className={styles.button}
+              onClick={() => updateProfile({ username, avatar_url })}
+              disabled={loading}
+            >
+              {loading ? 'Loading ...' : 'Go to landing page'}
+            </button>
+          </div>
 
-      <div>
-        <button
-          className="button block"
-          onClick={() => supabase.auth.signOut()}
-        >
-          Sign Out
-        </button>
+          <div>
+            <button
+              className={styles.button}
+              onClick={() => supabase.auth.signOut()}
+            >
+              Sign Out
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
