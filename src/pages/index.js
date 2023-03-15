@@ -3,12 +3,13 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Home() {
   return (
     <Layout home>
-      <h1 className={styles.test}>Homepage!</h1>
-      <Link href="/sign-in">Sign In/ Sign Up</Link>
+      <Logo className={styles.logo} />
+      <Link href="/sign-in">Click here to enter ArtBadge</Link>
     </Layout>
   );
 }
