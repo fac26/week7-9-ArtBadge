@@ -3,12 +3,28 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Home() {
   return (
     <Layout home>
-      <h1 className={styles.test}>Homepage!</h1>
-      <Link href="/sign-in">Sign In/ Sign Up</Link>
+      <div className={styles.container}>
+        <div className={styles.overlay}>
+          <img
+            className={styles.logo}
+            src="/ArtBadge-Logo.png"
+            alt="Art Badge Logo"
+          />
+          <h1 className={styles.title}>Art Badge</h1>
+          <p className={styles.overview}>
+            An app for you to explore new art experiences and share your own
+            ones with the word
+          </p>
+          <Link className={styles.link} href="/sign-in">
+            Sign In/ Sign Up
+          </Link>
+        </div>
+      </div>
     </Layout>
   );
 }
