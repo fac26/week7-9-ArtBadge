@@ -41,7 +41,7 @@ export default function ExploreReflect() {
 
       fetchUser();
     }
-  }, [session]);
+  }, [supabase, session]);
   return (
     <Layout>
       {user.id !== null ? (
