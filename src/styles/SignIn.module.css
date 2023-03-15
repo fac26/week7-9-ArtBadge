@@ -1,3 +1,18 @@
 .test {
   color: green;
 }
+
+.container {
+  position: absolute;
+  margin-top: -10%;
+  max-width: 90vw;
+  margin-left: 20%;
+}
+
+.logo {
+  height: 250px;
+  width: 250px;
+  margin-left: 17.5%;
+  margin-right: 10%;
+  margin-top: 20%;
+}

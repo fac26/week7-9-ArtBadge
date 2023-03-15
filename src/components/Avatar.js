@@ -25,6 +25,15 @@ export default function Avatar({ uid, url, size, onUpload }) {
     }
   }
 
+  const deleteAvatar = async () => {
+    try {
+      await supabase.storage.from('avatars').remove(`${uid}.png`);
+      setAvatarUrl(null);
+    } catch (error) {
+      console.log('Error deleting image: ', error);
+    }
+  };
+
   const uploadAvatar = async (event) => {
     try {
       setUploading(true);
@@ -58,12 +67,15 @@ export default function Avatar({ uid, url, size, onUpload }) {
   return (
     <div>
       {avatarUrl ? (
-        <img
-          src={avatarUrl}
-          alt="Avatar"
-          className="avatar image"
-          style={{ height: size, width: size }}
-        />
+        <>
+          <img
+            src={avatarUrl}
+            alt="Avatar"
+            className="avatar image"
+            style={{ height: size, width: size }}
+          />
+          <button onClick={deleteAvatar}>Delete</button>
+        </>
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }}>
           No avatar uploaded yet

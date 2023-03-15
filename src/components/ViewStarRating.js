@@ -19,9 +19,9 @@ const HalfStar = ({ onClick }) => (
 
 export default function ViewStarRating({ value }) {
   const filledStars = Math.floor(value);
-  const halfFilledStar = value - filledStars <= 0.5;
+  const halfFilledStar = value - filledStars >= 0.5 && value - filledStars < 1;
   const emptyStars = 5 - filledStars - (halfFilledStar ? 1 : 0);
-
+  console.log(halfFilledStar);
   return (
     <div>
       {[...Array(filledStars)].map((n, i) => (

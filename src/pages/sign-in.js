@@ -10,10 +10,38 @@ export default function SignIn() {
 
   return (
     <>
-      <h1 className={styles.test}>Sign Up / Sign In</h1>
-      <div className="container">
+      <img
+        className={styles.logo}
+        src="/ArtBadge-Logo.png"
+        alt="Art Badge Logo"
+      />
+      <div className={styles.container}>
         {!session ? (
-          <Auth supabaseClient={supabase} providers />
+          <Auth
+            supabaseClient={supabase}
+            appearance={{
+              style: {
+                button: {
+                  padding: 5,
+                  borderColor: '#D9D9D9',
+                  backgroundColor: '#D9D9D9',
+                  borderRadius: 25,
+                },
+                input: {
+                  padding: 5,
+                  borderColor: '#D9D9D9',
+                  backgroundColor: '#D9D9D9',
+                  borderRadius: 25,
+                  color: '#8D939E',
+                  textAlign: 'centre',
+                },
+                label: {
+                  display: 'none',
+                },
+              },
+            }}
+            providers
+          />
         ) : (
           <Account session={session} />
         )}
