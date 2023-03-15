@@ -1,8 +1,46 @@
 import styles from '@/styles/ExploreReflect.module.css';
 import Layout from '../components/Layout';
 import Link from 'next/link';
+import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import { useState } from 'react';
+import { useEffect } from 'react';
 
 export default function ExploreReflect() {
+  const session = useSession();
+  const supabase = useSupabaseClient();
+  // const userId = session.user.id;
+
+  const [user, setUser] = useState({
+    id: null,
+    name: '',
+    email: '',
+    avatar_url: null,
+    username: '',
+  });
+
+  useEffect(() => {
+    async function fetchUser() {
+      const { data, error } = await supabase
+        .from('profiles')
+        .select()
+        .eq('id', session.user.id)
+        .single();
+
+      if (error) {
+        // eslint-disable-next-line no-console
+        console.log('Error fetching user:', error);
+      } else {
+        setUser(data);
+        // if (data.avatar_url) {
+        //   // Only download the avatar if it exists
+        //   downloadImage(data.avatar_url);
+        // }
+      }
+    }
+
+    fetchUser();
+  }, [supabase, session.user.id]);
+
   return (
     <Layout>
       <h1 className={styles.header}>ArtBadge</h1>
@@ -16,7 +54,7 @@ export default function ExploreReflect() {
         </button>
       </Link>
       <br></br>
-      <Link href="/reflect-personal-profile">
+      <Link href={`/user-profile/${session.user.id}`}>
         <button>
           REFLECT<br></br>
           on art that you have seen

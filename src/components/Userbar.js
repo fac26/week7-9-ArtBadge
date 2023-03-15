@@ -5,7 +5,7 @@ import styles from '../styles/Userbar.module.css';
 import BackButton from './BackButton';
 import Link from 'next/link';
 
-const Userbar = ({ session}) => {
+const Userbar = ({ session }) => {
   const [user, setUser] = useState({
     id: null,
     name: '',
@@ -57,7 +57,7 @@ const Userbar = ({ session}) => {
     <>
       <div className={styles.header_container}>
         <div className={styles.back_button}>
-        <BackButton />
+          <BackButton />
         </div>
         <p>{user.username}</p>
         <p className={styles.badge}>{user.badge_level}</p>
