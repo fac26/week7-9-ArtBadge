@@ -101,7 +101,7 @@ const AddDetails = () => {
             required
           />
           <input
-            type="text"
+            type="time"
             id="time"
             className="addTime"
             value={time}
