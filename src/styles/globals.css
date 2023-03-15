@@ -1,17 +1,17 @@
 :root {
   --icon-colour: #8d939e;
-  --card-background-colour: #D9D9D9;
+  --card-background-colour: #d9d9d9;
 }
 
 html,
 body {
-  --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu,
-    Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  --custom-font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   --custom-bg-color: white;
   --custom-panel-color: #222;
   --custom-box-shadow: 0 2px 8px 0 rgba(0, 0, 0, 0.8);
   --custom-color: black;
-  --custom-color-brand: #D9D9D9;
+  --custom-color-brand: #d9d9d9;
   --custom-color-secondary: #666;
   --custom-border: 1px solid #333;
   --custom-border-radius: 5px;
@@ -51,7 +51,6 @@ body,
   border-radius: 5px;
 }
 
-
 button,
 .button {
   color: var(--custom-color);
@@ -72,4 +71,3 @@ button.primary,
   background-color: var(--custom-color-brand);
   border: 1px solid var(--custom-color-brand);
 }
-
