@@ -47,7 +47,6 @@ export default function SignIn() {
           />
         ) : (
           <>
-            <Logo />
             <Account session={session} />
           </>
         )}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useSupabaseClient } from '@supabase/auth-helpers-react';
+import styles from '../styles/Avatar.module.css';
 
 export default function Avatar({ uid, url, size, onUpload }) {
   const supabase = useSupabaseClient();
@@ -24,15 +25,6 @@ export default function Avatar({ uid, url, size, onUpload }) {
       console.log('Error downloading image: ', error);
     }
   }
-
-  const deleteAvatar = async () => {
-    try {
-      await supabase.storage.from('avatars').remove(`${uid}.png`);
-      setAvatarUrl(null);
-    } catch (error) {
-      console.log('Error deleting image: ', error);
-    }
-  };
 
   const uploadAvatar = async (event) => {
     try {
@@ -65,24 +57,23 @@ export default function Avatar({ uid, url, size, onUpload }) {
   };
 
   return (
-    <div>
+    <div className={styles.container}>
       {avatarUrl ? (
         <>
           <img
             src={avatarUrl}
             alt="Avatar"
-            className="avatar image"
+            className="avatar-image"
             style={{ height: size, width: size }}
           />
-          <button onClick={deleteAvatar}>Delete</button>
         </>
       ) : (
-        <div className="avatar no-image" style={{ height: size, width: size }}>
+        <div className="avatar-no-image" style={{ height: size, width: size }}>
           No avatar uploaded yet
         </div>
       )}
       <div style={{ width: size }}>
-        <label className="button primary block" htmlFor="single">
+        <label className={styles.upload} htmlFor="single">
           {uploading ? 'Uploading ...' : 'Upload'}
         </label>
         <input
