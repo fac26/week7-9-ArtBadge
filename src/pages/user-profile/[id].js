@@ -49,7 +49,7 @@ export default function UserProfile({ userProfile }) {
 
     fetchPosts();
   }, [userProfile]);
-
+  console.log(posts);
   return (
     <Layout>
       {userProfile ? (

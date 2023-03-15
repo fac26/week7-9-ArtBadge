@@ -6,6 +6,8 @@ import { Icon } from '@iconify/react';
 
 export default function ArtCard({ post }) {
   const { title, image, location, rating } = post;
+  if (image == null) return;
+
   return (
     <div className={styles.cardContainer}>
       <Image

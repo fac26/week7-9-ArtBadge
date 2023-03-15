@@ -1,7 +1,7 @@
-import styles from '../styles/Layout.module.css';
 import NavBar from '@/components/NavBar';
 import Userbar from './Userbar';
 import { useSession, useSupabaseClient } from '@supabase/auth-helpers-react';
+import styles from '../styles/NavBar.module.css';
 
 export default function Layout({ children, home }) {
   const session = useSession();
