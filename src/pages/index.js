@@ -3,6 +3,7 @@ import Head from 'next/head';
 import styles from '@/styles/Home.module.css';
 import Layout from '@/components/Layout';
 import Link from 'next/link';
+import Logo from '@/components/Logo';
 
 export default function Home() {
   return (
