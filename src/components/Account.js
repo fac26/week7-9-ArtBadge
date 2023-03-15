@@ -75,7 +75,13 @@ export default function Account({ session }) {
       />
       <div>
         <label htmlFor="email">Email</label>
-        <input id="email" type="text" value={session.user.email} disabled />
+        <input
+          id="email"
+          type="text"
+          value={session.user.email}
+          disabled
+          required
+        />
       </div>
       <div>
         <label htmlFor="username">Username</label>
@@ -84,6 +90,7 @@ export default function Account({ session }) {
           type="text"
           value={username || ''}
           onChange={(e) => setUsername(e.target.value)}
+          required
         />
       </div>
 
