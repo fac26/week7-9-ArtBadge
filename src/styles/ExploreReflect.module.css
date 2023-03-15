@@ -8,7 +8,7 @@
   background-size: cover;
   background-position-x: -7.5rem;
   background-repeat: no-repeat;
-  margin-top: 7.5rem;
+  margin-top: 5.5rem;
   padding-top: 7.5rem;
 }
 
@@ -16,10 +16,19 @@
   font-family: 'IM FELL Double Pica SC';
   text-align: center;
   color: white;
+  font-size: 3rem;
+  font-weight: normal;
 }
 
 .header::first-letter {
-  font-size: 3.5rem;
+  font-size: 4rem;
+}
+
+.largeb {
+  font-family: 'IM FELL Double Pica SC';
+  text-align: center;
+  color: white;
+  font-size: 4rem;
 }
 
 .tag {
@@ -27,6 +36,7 @@
   text-align: center;
   color: white;
   font-weight: normal;
+  margin-top: -2rem;
 }
 
 .explorebutton {
@@ -36,6 +46,8 @@
 	height: 				150px;
   margin:         1rem;
   background-color: #BA9696;
+  border-color: transparent;
+  color: white;
 }
 
 .reflectbutton {
@@ -45,28 +57,19 @@
 	height: 				150px;
   margin:         1rem;
   background-color: #707E99;
+  border-color: transparent;
+  color: white;
 }
 
 .lowercase {
   text-transform: lowercase;
+  color: white;
+  line-height: 2px;
 }
 
 .displaycircles {
   display: flex;
   justify-content: center;
 }
-
-/* .overview {
-  width: 75%;
-  text-align: center;
-  justify-content: center;
-  margin-left: auto;
-  margin-right: auto;
-  font-family: 'Inter', sans-serif;
-  font-size: 16px;
-  margin-top: -1rem;
-  color: white;
-} */
-
 
 

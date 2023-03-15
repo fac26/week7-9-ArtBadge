@@ -19,27 +19,29 @@ export default function ExploreReflect() {
   });
 
   useEffect(() => {
-    async function fetchUser() {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select()
-        .eq('id', session.user.id)
-        .single();
+    if (session) {
+      async function fetchUser() {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select()
+          .eq('id', session.user.id)
+          .single();
 
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.log('Error fetching user:', error);
-      } else {
-        setUser(data);
-        // if (data.avatar_url) {
-        //   // Only download the avatar if it exists
-        //   downloadImage(data.avatar_url);
-        // }
+        if (error) {
+          // eslint-disable-next-line no-console
+          console.log('Error fetching user:', error);
+        } else {
+          setUser(data);
+          // if (data.avatar_url) {
+          //   // Only download the avatar if it exists
+          //   downloadImage(data.avatar_url);
+          // }
+        }
       }
-    }
 
-    fetchUser();
-  }, [session]);
+      fetchUser();
+    }
+  }, [session, supabase]);
 
   return (
     <Layout>
@@ -47,7 +49,10 @@ export default function ExploreReflect() {
         <>
           <div className={styles.container}>
             <div className={styles.overlay}>
-              <h1 className={styles.header}>ART BADGE</h1>
+              <h1 className={styles.header}>
+                ART
+                <span className={styles.largeb}>B</span>ADGE
+              </h1>
               <h2 className={styles.tag}>
                 Upload and share your favourite artwork with your friends
               </h2>
