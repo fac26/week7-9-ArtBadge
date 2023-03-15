@@ -19,8 +19,14 @@
 
 .header {
   font-family: 'IM FELL Double Pica SC';
+  text-align: center;
 }
 
 .tag, .explorebutton, .reflectbutton {
   font-family: 'Inter', sans-serif;
+  text-align: center;
 }
+
+
+
+
