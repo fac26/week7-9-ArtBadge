@@ -55,14 +55,18 @@ export default function ExploreReflect() {
                 <Link href="/explore-main">
                   <button className={styles.explorebutton}>
                     EXPLORE<br></br>
-                    new art that others have experienced
+                    <span className={styles.lowercase}>
+                      new art that others have experienced
+                    </span>
                   </button>
                 </Link>
                 <br></br>
                 <Link href={`/user-profile/${user.id}`}>
                   <button className={styles.reflectbutton}>
                     REFLECT<br></br>
-                    on art that you have seen
+                    <span className={styles.lowercase}>
+                      on art that you have seen
+                    </span>
                   </button>
                 </Link>
               </div>

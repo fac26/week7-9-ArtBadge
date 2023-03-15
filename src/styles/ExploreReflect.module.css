@@ -47,6 +47,10 @@
   background-color: #707E99;
 }
 
+.lowercase {
+  text-transform: lowercase;
+}
+
 .displaycircles {
   display: flex;
   justify-content: center;
