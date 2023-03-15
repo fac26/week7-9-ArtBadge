@@ -19,28 +19,29 @@ export default function ExploreReflect() {
   });
 
   useEffect(() => {
-    async function fetchUser() {
-      const { data, error } = await supabase
-        .from('profiles')
-        .select()
-        .eq('id', session.user.id)
-        .single();
+    if (session) {
+      async function fetchUser() {
+        const { data, error } = await supabase
+          .from('profiles')
+          .select()
+          .eq('id', session.user.id)
+          .single();
 
-      if (error) {
-        // eslint-disable-next-line no-console
-        console.log('Error fetching user:', error);
-      } else {
-        setUser(data);
-        // if (data.avatar_url) {
-        //   // Only download the avatar if it exists
-        //   downloadImage(data.avatar_url);
-        // }
+        if (error) {
+          // eslint-disable-next-line no-console
+          console.log('Error fetching user:', error);
+        } else {
+          setUser(data);
+          // if (data.avatar_url) {
+          //   // Only download the avatar if it exists
+          //   downloadImage(data.avatar_url);
+          // }
+        }
       }
+
+      fetchUser();
     }
-
-    fetchUser();
   }, [session]);
-
   return (
     <Layout>
       {user.id !== null ? (

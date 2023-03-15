@@ -10,22 +10,42 @@ export default function SignIn() {
 
   return (
     <>
-      <div className="container">
-        {!session ? (
-          <>
-            <Logo />
-            <p className={styles.signInCopy}>
-              Sign up for a new ArtBadge account or sign in to an existing
-              account.
-            </p>
-            <Auth supabaseClient={supabase} providers />
-          </>
-        ) : (
-          <>
-            <Logo />
-            <Account session={session} />
-          </>
-        )}
+      <div className={styles.overlay}>
+        <div className={styles.container}>
+          <Logo />
+          {!session ? (
+            <Auth
+              supabaseClient={supabase}
+              appearance={{
+                style: {
+                  button: {
+                    padding: 5,
+                    borderColor: '#D9D9D9',
+                    backgroundColor: '#D9D9D9',
+                    borderRadius: 25,
+                  },
+                  input: {
+                    padding: 5,
+                    borderColor: '#D9D9D9',
+                    backgroundColor: '#D9D9D9',
+                    borderRadius: 25,
+                    color: '#8D939E',
+                    textAlign: 'centre',
+                  },
+                  label: {
+                    display: 'none',
+                  },
+                },
+              }}
+              providers
+            />
+          ) : (
+            <>
+              <Logo />
+              <Account session={session} />
+            </>
+          )}
+        </div>
       </div>
     </>
   );
