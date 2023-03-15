@@ -41,27 +41,31 @@ export default function ExploreReflect() {
     fetchUser();
   }, [session]);
 
-  return user ? (
+  return (
     <Layout>
-      <h1 className={styles.header}>ArtBadge</h1>
-      <h2 className={styles.tag}>
-        Upload and share your favourite artwork with your friends
-      </h2>
-      <Link href="/explore-main">
-        <button>
-          EXPLORE<br></br>
-          new art that others have experienced
-        </button>
-      </Link>
-      <br></br>
-      <Link href={`/user-profile/${user.id}`}>
-        <button>
-          REFLECT<br></br>
-          on art that you have seen
-        </button>
-      </Link>
+      {user.id !== null ? (
+        <>
+          <h1 className={styles.header}>ArtBadge</h1>
+          <h2 className={styles.tag}>
+            Upload and share your favourite artwork with your friends
+          </h2>
+          <Link href="/explore-main">
+            <button>
+              EXPLORE<br></br>
+              new art that others have experienced
+            </button>
+          </Link>
+          <br></br>
+          <Link href={`/user-profile/${user.id}`}>
+            <button>
+              REFLECT<br></br>
+              on art that you have seen
+            </button>
+          </Link>
+        </>
+      ) : (
+        <div>Loading...</div>
+      )}
     </Layout>
-  ) : (
-    <div>Loading...</div>
   );
 }
