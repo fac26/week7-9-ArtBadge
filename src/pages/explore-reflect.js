@@ -39,9 +39,9 @@ export default function ExploreReflect() {
     }
 
     fetchUser();
-  }, [supabase, session.user.id]);
+  }, [session]);
 
-  return (
+  return user ? (
     <Layout>
       <h1 className={styles.header}>ArtBadge</h1>
       <h2 className={styles.tag}>
@@ -54,12 +54,14 @@ export default function ExploreReflect() {
         </button>
       </Link>
       <br></br>
-      <Link href={`/user-profile/${session.user.id}`}>
+      <Link href={`/user-profile/${user.id}`}>
         <button>
           REFLECT<br></br>
           on art that you have seen
         </button>
       </Link>
     </Layout>
+  ) : (
+    <div>Loading...</div>
   );
 }
