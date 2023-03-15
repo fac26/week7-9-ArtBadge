@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-.test {
-  color: blueviolet;
+.heading {
+  font-family: 'Inter', sans-serif;
 }
 
 .artGrid {
