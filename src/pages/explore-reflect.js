@@ -41,7 +41,8 @@ export default function ExploreReflect() {
 
       fetchUser();
     }
-  }, [session, supabase]);
+
+  }, [supabase, session]);
 
   return (
     <Layout>

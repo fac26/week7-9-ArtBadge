@@ -9,44 +9,48 @@ export default function SignIn() {
   const supabase = useSupabaseClient();
 
   return (
-    <>
+    <div className={styles.container}>
       <div className={styles.overlay}>
-        <div className={styles.container}>
-          <Logo />
-          {!session ? (
-            <Auth
-              supabaseClient={supabase}
-              appearance={{
-                style: {
-                  button: {
-                    padding: 5,
-                    borderColor: '#D9D9D9',
-                    backgroundColor: '#D9D9D9',
-                    borderRadius: 25,
-                  },
-                  input: {
-                    padding: 5,
-                    borderColor: '#D9D9D9',
-                    backgroundColor: '#D9D9D9',
-                    borderRadius: 25,
-                    color: '#8D939E',
-                    textAlign: 'centre',
-                  },
-                  label: {
-                    display: 'none',
-                  },
+        <Logo />
+        {!session ? (
+          <Auth
+            supabaseClient={supabase}
+            appearance={{
+              style: {
+                button: {
+                  padding: 5,
+                  borderColor: '#D9D9D9',
+                  backgroundColor: '#D9D9D9',
+                  borderRadius: 25,
+                  width: 300,
+                  marginLeft: 30,
                 },
-              }}
-              providers
-            />
-          ) : (
-            <>
-              <Logo />
-              <Account session={session} />
-            </>
-          )}
-        </div>
+                input: {
+                  padding: 5,
+                  borderColor: '#D9D9D9',
+                  backgroundColor: '#D9D9D9',
+                  borderRadius: 25,
+                  color: '#8D939E',
+                  textAlign: 'centre',
+                  width: 300,
+                  marginLeft: 30,
+                },
+                label: {
+                  display: 'none',
+                },
+                anchor: {
+                  color: 'white',
+                },
+              },
+            }}
+            providers
+          />
+        ) : (
+          <>
+            <Account session={session} />
+          </>
+        )}
       </div>
-    </>
+    </div>
   );
 }
