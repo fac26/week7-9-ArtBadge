@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=IM+Fell+Double+Pica+SC&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
 
-
 .overlay {
   height: 100vh;
   width: 100vw;
@@ -15,18 +14,47 @@
   background-size: cover;
   background-position-x: -7.5rem;
   background-repeat: no-repeat;
+  margin-top: 7.5rem;
 }
 
 .header {
   font-family: 'IM FELL Double Pica SC';
   text-align: center;
+  color: white;
 }
 
-.tag, .explorebutton, .reflectbutton {
+.tag {
   font-family: 'Inter', sans-serif;
   text-align: center;
+  color: white;
 }
 
+.explorebutton, .reflectbutton {
+  font-family:    'Inter', sans-serif;
+  align-items:    center;
+  border-radius:  50%;
+  width: 					150px;
+	height: 				150px;
+  margin:         2rem;
+}
+
+.displaycircles {
+  display: flex;
+  justify-content: center;
+}
+
+
+.overview {
+  width: 75%;
+  text-align: center;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  margin-top: -1rem;
+  color: white;
+}
 
 
 
