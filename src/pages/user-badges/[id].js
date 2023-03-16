@@ -45,7 +45,7 @@ export default function UserBadges({ userProfile }) {
     }
 
     fetchBadges();
-  }, [userProfile]);
+  }, []);
 
   return (
     <Layout>
