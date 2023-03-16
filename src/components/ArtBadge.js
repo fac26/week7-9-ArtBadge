@@ -43,7 +43,6 @@ export default function ArtBadge({ badge }) {
         <h3>{title}</h3>
         <p>
           {description}
-          {badgeUrl}
         </p>
       </div>
     </div>
