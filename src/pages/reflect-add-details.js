@@ -6,10 +6,10 @@ import Link from 'next/link';
 export default function ReflectAddDetails() {
   return (
     <Layout>
-      <h1 className={styles.test}>Reflect add details page</h1>
       <AddDetails />
       <Link href="/reflect-add-preview">
-        <button>Next</button>
+        <button className={styles.cancel}>Cancel</button>
+        <button className={styles.next}>Next</button>
       </Link>
     </Layout>
   );

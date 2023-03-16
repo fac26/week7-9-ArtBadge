@@ -1,3 +1,27 @@
 .test {
-    color: aquamarine;
+  color: aquamarine;
+}
+
+.next {
+  position: absolute;
+  margin-top: -85px;
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: transparent;
+  color: #8d939e;
+  padding-top: -50px;
+  margin-left: 175px;
+}
+
+.cancel {
+  position: absolute;
+  margin-top: -85px;
+  width: 120px;
+  height: 30px;
+  border-radius: 20px;
+  border-color: transparent;
+  color: #8d939e;
+  padding-top: -50px;
+  margin-left: 50px;
 }

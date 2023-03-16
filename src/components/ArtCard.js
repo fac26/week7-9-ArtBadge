@@ -1,6 +1,5 @@
 import ViewStarRating from './ViewStarRating';
 import styles from '../styles/ArtCard.module.css';
-import Layout from './Layout';
 import Image from 'next/image';
 import { Icon } from '@iconify/react';
 

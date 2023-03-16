@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import SetStarRating from './StarRating';
 import Image from 'next/image';
 import { useSession } from '@supabase/auth-helpers-react';
+import styles from '../styles/AddDetails.module.css';
+import { Icon } from '@iconify/react';
 
 const AddDetails = () => {
   const session = useSession();
@@ -55,71 +57,87 @@ const AddDetails = () => {
 
   return (
     <>
-      <div>
-        {image && (
-          <Image
-            src={image}
-            height={300}
-            width={300}
-            alt="Image from local storage"
-          />
-        )}
-      </div>
-      <div className="addDetails">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            id="title"
-            className="addTitle"
-            value={title}
-            onChange={(e) => setTitle(e.target.value)}
-            placeholder="Enter title*"
-            required
-          />
-          <input
-            type="text"
-            id="artist"
-            className="addArtist"
-            value={artist}
-            onChange={(e) => setArtist(e.target.value)}
-            placeholder="Who is it by?*"
-            required
-          />
-          <label htmlFor="rating">What would you rate it out of 5?*</label>
-          <SetStarRating
-            onChange={handleRatingChange}
-            rating={rating}
-            setRating={setRating}
-          />
-          <input
-            type="text"
-            id="location"
-            className="addLocation"
-            value={location}
-            onChange={(e) => setLocation(e.target.value)}
-            placeholder="Which gallery and city did you see it?*"
-            required
-          />
-          <input
-            type="time"
-            id="time"
-            className="addTime"
-            value={time}
-            onChange={(e) => setTime(e.target.value)}
-            placeholder="What time did you see it(am/pm)?*"
-            required
-          />
-          <textarea
-            name="description"
-            id="description"
-            className="addDescription"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            placeholder="Description of how your experience was"
-            cols="30"
-            rows="10"
-          ></textarea>
-        </form>
+      <div
+        className={styles.container}
+        style={{
+          backgroundImage: `url(${image})`,
+        }}
+      >
+        <div className={styles.overlay}>
+          <div className="addDetails">
+            <h1 className={styles.heading}>
+              Fill out this form to create a post.
+            </h1>
+            <form onSubmit={handleSubmit}>
+              <input
+                type="text"
+                id="title"
+                className={styles.title}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
+                placeholder="Enter title*"
+                required
+              />
+              <input
+                type="text"
+                id="artist"
+                className={styles.artist}
+                value={artist}
+                onChange={(e) => setArtist(e.target.value)}
+                placeholder="Who is it by?*"
+                required
+              />
+              <label className={styles.ratingLabel} htmlFor="rating">
+                What would you rate it out of 5?*
+              </label>
+              <SetStarRating
+                onChange={handleRatingChange}
+                rating={rating}
+                setRating={setRating}
+              />
+              <div className={styles.locationForm}>
+                <Icon
+                  className={styles.vector}
+                  icon="material-symbols:location-on-rounded"
+                />
+                <input
+                  type="text"
+                  id="location"
+                  className={styles.location}
+                  value={location}
+                  onChange={(e) => setLocation(e.target.value)}
+                  placeholder="Gallery, city?*"
+                  required
+                />
+              </div>
+              <div className={styles.timeForm}>
+                <Icon
+                  className={styles.vector}
+                  icon="material-symbols:nest-clock-farsight-analog-outline-rounded"
+                />
+                <input
+                  type="time"
+                  id="time"
+                  className={styles.time}
+                  value={time}
+                  onChange={(e) => setTime(e.target.value)}
+                  placeholder="What time did you see it(am/pm)?*"
+                  required
+                />
+              </div>
+              <textarea
+                name="description"
+                id="description"
+                className={styles.description}
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                placeholder="Description of how your experience was"
+                cols="30"
+                rows="10"
+              ></textarea>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
