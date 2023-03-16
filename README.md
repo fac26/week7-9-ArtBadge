@@ -165,19 +165,35 @@ The homepage received mixed feedback regarding the visibility of certain feature
 
 #### How did you plan a user experience?
 
+- We started by building the first iteration of a clickable figma protoype, which we took to users for their feedback. This not only allowed us to take on board features they would like to have implemented but also gave us a chance to see how they navigate through the website and what elements drew their attention the most. 
+    
+Using this as a starting point and being selective with the user feedback we took on board. We continued to refine the clickabe figma prototype to the point where it was simplified enough to go to the build stage. We also kept testing the user journey through the app by using the prototype to see how navigating between pages would work. To solidify our findings we also got various members of our family and friends to test the prototype to see if they ahd additional feedback about navigation through the app.
+
 #### What technical decisions did you make?
+    
+We decided to explore using Supabase as our back-end, rather than sticking with SQLite, which is what we have all worked on previously. This meant getting used to how Supabase works. 
+We considered using React Native at the start, but abandoned this due to time constraints, as with employing Netlify for our database.     
 
 #### Server-render vs client-render vs both
+    
+We used both server-rendering and client-rendering on this project. It was a full-stack, according with the use of Next.JS. 
 
 #### Relational or non-relational or no DB
+    
+We used Supabase relational databases.
 
 #### Self-hosted or platform-as-a-service
 
+We used Vercel, a platform-as-a-service, for deployment.
+
 #### Frontend first vs DB first
+
+We originally focused on the Front end first because we wanted there to be a base 'skeleton' to work from and be confident that you could navigate between the pages needed for the project.
 
 #### Did you create a technical specification?
 
-`Review methods of software design with reference to functional/technical specifications and apply a justified approach to software development (K11, S11, S12)`
+For this project there was no need for a technical specification as this product was not being developed for a product owner.
+
 
 </details>
 
