@@ -211,7 +211,7 @@ The homepage received mixed feedback regarding the visibility of certain feature
 The first tested our Navigation Bar component, which is prominent throughout our site, and allows the user to navigate the app via icons.
 In order to make the Cypress Testing work, we added `data-cy="[icon function]"` props to the original NavBar component, which the file in 
 Cypress Testing could then target. 
-The second test file verifies that the sign-in functionality is working correctly, including being able to validate any email and password passed in. This was only possible via adding the following object in the `testData.json' file:
+The second test file verifies that the sign-in functionality is working correctly, including being able to validate any email and password passed in. This was only possible via adding the following object in the `testData.json` file, in the `fixtures` sub-folder inside the `cypress` root folder:
 
 ```
 {
