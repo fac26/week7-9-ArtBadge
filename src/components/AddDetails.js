@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import SetStarRating from './StarRating';
 import Image from 'next/image';
 import { useSession } from '@supabase/auth-helpers-react';
+
 import styles from '../styles/AddDetails.module.css';
 import { Icon } from '@iconify/react';
 
@@ -57,6 +58,7 @@ const AddDetails = () => {
 
   return (
     <>
+
       <div
         className={styles.container}
         style={{
