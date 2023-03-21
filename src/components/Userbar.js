@@ -60,7 +60,9 @@ const Userbar = ({ session }) => {
           <BackButton />
         </div>
         <p>{user.username}</p>
-        <p className={styles.badge}>{user.badge_level}</p>
+        <Link href={`/user-badges/${user.id}`}>
+          <p className={styles.badge}>{user.badge_level}</p>
+        </Link>
         {avatarUrl && (
           <Link href={`/user-profile/${user.id}`}>
             <Image
