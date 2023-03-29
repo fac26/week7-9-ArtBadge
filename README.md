@@ -2,7 +2,7 @@
 
 We have created an app called Art Badge. The app allows users to find emergency food. We are building Hope as our Tech for Better Project for [Founders & Coders FAC26](https://github.com/fac26).
 
-Contributors [Laura Keating](https://github.com/LauraK0), [Niete Ratilal](https://github.com/ighellache), [Dominic Simpson](https://github.com/DominicSimpson), [Gal K Jones](https://github.com/GalKJ)
+Contributors [Laura Keating](https://github.com/LauraK0), [Iman Ghellache](https://github.com/ighellache), [Dominic Simpson](https://github.com/DominicSimpson), [Gal K Jones](https://github.com/GalKJ)
 
 ## Introduction
 
