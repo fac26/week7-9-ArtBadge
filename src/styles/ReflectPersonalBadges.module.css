@@ -1,3 +1,24 @@
-.test {
-  color: grey;
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+.heading {
+  font-family: 'Inter', sans-serif;
+  display: flex;
+}
+
+.badgesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  margin: 2rem;
+  gap: 1rem;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hr {
+  width: 40%;
+  margin: 0 2rem;
 }
